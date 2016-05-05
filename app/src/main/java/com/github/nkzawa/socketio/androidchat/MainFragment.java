@@ -76,6 +76,7 @@ public class MainFragment extends Fragment {
         mSocket.on("stop typing", onStopTyping);
         mSocket.connect();
 
+
         startSignIn();
     }
 
@@ -159,6 +160,7 @@ public class MainFragment extends Fragment {
             return;
         }
 
+
         mUsername = data.getStringExtra("username");
         int numUsers = data.getIntExtra("numUsers", 1);
 
@@ -196,7 +198,7 @@ public class MainFragment extends Fragment {
     }
 
     private void addParticipantsLog(int numUsers) {
-        addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
+        getActivity().setTitle(getResources().getString(R.string.message_participants,numUsers));
     }
 
     private void addMessage(String username, String message) {
@@ -389,5 +391,7 @@ public class MainFragment extends Fragment {
             mSocket.emit("stop typing");
         }
     };
+
+
 }
 
