@@ -1,4 +1,4 @@
-package com.github.nkzawa.socketio.androidchat;
+package com.github.nkzawa.socketio.androidchat.controller;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,6 +22,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.nkzawa.socketio.androidchat.adapter.MessageAdapter;
+import com.github.nkzawa.socketio.androidchat.R;
+import com.github.nkzawa.socketio.androidchat.model.Message;
+
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 import org.json.JSONException;
@@ -29,7 +34,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * A chat fragment containing messages view and input form.
@@ -42,7 +46,7 @@ public class MainFragment extends Fragment {
 
     private RecyclerView mMessagesView;
     private EditText mInputMessageView;
-    private List<Message> mMessages = new ArrayList<Message>();
+    private List<Message> mMessages = new ArrayList<>();
     private RecyclerView.Adapter mAdapter;
     private boolean mTyping = false;
     private Handler mTypingHandler = new Handler();
@@ -176,12 +180,8 @@ public class MainFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_leave) {
             leave();
             return true;
@@ -202,8 +202,14 @@ public class MainFragment extends Fragment {
     }
 
     private void addMessage(String username, String message) {
-        mMessages.add(new Message.Builder(Message.TYPE_MESSAGE)
-                .username(username).message(message).build());
+        Message m=new Message.Builder(Message.TYPE_MESSAGE)
+                .username(username).message(message).build();
+
+        if(mUsername.equals(username)){
+            m.isMine=true;
+        }
+
+        mMessages.add(m);
         mAdapter.notifyItemInserted(mMessages.size() - 1);
         scrollToBottom();
     }

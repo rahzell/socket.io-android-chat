@@ -1,4 +1,4 @@
-package com.github.nkzawa.socketio.androidchat;
+package com.github.nkzawa.socketio.androidchat.model;
 
 public class Message {
 
@@ -9,6 +9,7 @@ public class Message {
     private int mType;
     private String mMessage;
     private String mUsername;
+    public boolean isMine=false;
 
     private Message() {}
 
@@ -23,7 +24,6 @@ public class Message {
     public String getUsername() {
         return mUsername;
     };
-
 
     public static class Builder {
         private final int mType;

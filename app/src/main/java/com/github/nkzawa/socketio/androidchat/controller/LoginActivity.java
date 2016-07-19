@@ -1,4 +1,4 @@
-package com.github.nkzawa.socketio.androidchat;
+package com.github.nkzawa.socketio.androidchat.controller;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.github.nkzawa.socketio.androidchat.R;
+import com.github.nkzawa.socketio.androidchat.controller.ChatApplication;
+
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 import org.json.JSONException;

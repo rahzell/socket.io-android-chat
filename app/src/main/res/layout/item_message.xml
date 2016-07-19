@@ -1,9 +1,16 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bubble_layout_parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="@dimen/spacing">
+
+    <LinearLayout
+        android:id="@+id/bubble_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bubble1">
 
     <TextView
             android:id="@+id/username"
@@ -12,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+        android:text="username:"/>
     <TextView
             android:id="@+id/message"
             style="?android:textAppearanceMedium"
@@ -21,6 +29,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/spacing"
             android:paddingRight="@dimen/spacing"
-            android:singleLine="true"/>
+            android:singleLine="true"
+        android:text="message"/>
 
+        </LinearLayout>
 </LinearLayout>
