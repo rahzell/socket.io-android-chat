@@ -8,12 +8,7 @@ import io.socket.client.IO;
 import io.socket.client.Socket;
 
 import java.net.URISyntaxException;
-import java.security.NoSuchAlgorithmException;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
+import com.facebook.FacebookSdk;
 
 public class ChatApplication extends Application {
 

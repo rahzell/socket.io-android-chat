@@ -1,10 +1,9 @@
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/bubble_layout_parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/spacing">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bubble_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/spacing">
 
     <LinearLayout
         android:id="@+id/bubble_layout"
@@ -12,25 +11,24 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bubble1">
 
-    <TextView
+        <TextView
             android:id="@+id/username"
             style="?android:textAppearanceMedium"
-            android:textColor="?android:textColorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textStyle="bold"
-        android:text="username:"/>
-    <TextView
+            android:text="username:"
+            android:textColor="?android:textColorPrimary"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/message"
             style="?android:textAppearanceMedium"
-            android:textColor="?android:textColorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/spacing"
             android:paddingRight="@dimen/spacing"
-            android:singleLine="true"
-        android:text="message"/>
+            android:text="messageffffffffffffffffffffffffffffffffffffffffffff wegewf we fwe fwe fwewe "
+            android:textColor="?android:textColorPrimary" />
 
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
